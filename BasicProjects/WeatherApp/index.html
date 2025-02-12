@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="mainContainer w-100">
+        <h3>Weather App Example</h3>
+
+        <div class="searchContainer">
+            <h6>Enter a City Name</h6>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="City Name" id="cityNameText"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-secondary" type="button" id="searchButton">Search</button>
+                <button class="btn btn-secondary" type="button" id="useLocationButton">Use Current Location</button>
+            </div>
+        </div>
+
+        <div class="weather-card">
+            <h2 id="cityNameTxt">New York</h2>
+            <div class="temp" id="tempTxt">22°</div>
+
+            <div id="weatherIcon">
+                <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M32.87 42.6667C38.7611 42.6667 43.5367 37.8911 43.5367 32C43.5367 26.109 38.7611 21.3334 32.87 21.3334C26.979 21.3334 22.2034 26.109 22.2034 32C22.2034 37.8911 26.979 42.6667 32.87 42.6667Z"
+                        stroke="white" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M32.8701 5.33337V10.6667" stroke="white" stroke-width="5.33333" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M32.8701 53.3334V58.6667" stroke="white" stroke-width="5.33333" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M14.0168 13.1466L17.7768 16.9066" stroke="white" stroke-width="5.33333"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M47.9634 47.0934L51.7234 50.8534" stroke="white" stroke-width="5.33333"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.20337 32H11.5367" stroke="white" stroke-width="5.33333" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M54.2034 32H59.5367" stroke="white" stroke-width="5.33333" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M17.7768 47.0934L14.0168 50.8534" stroke="white" stroke-width="5.33333"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M51.7234 13.1466L47.9634 16.9066" stroke="white" stroke-width="5.33333"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <div class="details">
+                <div id="feelsLikeTxt">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14 4V14.54C14.7626 14.9803 15.3586 15.6599 15.6955 16.4734C16.0325 17.2869 16.0916 18.1888 15.8637 19.0394C15.6358 19.8899 15.1336 20.6415 14.435 21.1775C13.7365 21.7136 12.8805 22.0041 12 22.0041C11.1195 22.0041 10.2635 21.7136 9.56496 21.1775C8.86638 20.6415 8.3642 19.8899 8.1363 19.0394C7.9084 18.1888 7.96752 17.2869 8.30448 16.4734C8.64145 15.6599 9.23743 14.9803 10 14.54V4C10 3.46957 10.2107 2.96086 10.5858 2.58579C10.9609 2.21071 11.4696 2 12 2C12.5304 2 13.0391 2.21071 13.4142 2.58579C13.7893 2.96086 14 3.46957 14 4Z"
+                            stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Feels like: 19°
+                </div>
+                <div id="windTxt">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.7 7.69998C17.9927 7.41814 18.3497 7.2119 18.7401 7.0991C19.1304 6.98631 19.5424 6.97037 19.9403 7.05266C20.3383 7.13495 20.7101 7.313 21.0237 7.57138C21.3373 7.82976 21.5832 8.16069 21.7401 8.53551C21.897 8.91033 21.9602 9.31775 21.9242 9.72249C21.8882 10.1272 21.754 10.5171 21.5334 10.8583C21.3128 11.1995 21.0123 11.4818 20.658 11.6808C20.3037 11.8797 19.9062 11.9893 19.5 12H2"
+                            stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M9.6 4.60005C9.83168 4.36375 10.1184 4.18864 10.4344 4.0904C10.7504 3.99216 11.0858 3.97387 11.4106 4.03717C11.7355 4.10047 12.0395 4.24338 12.2955 4.45309C12.5515 4.66279 12.7514 4.93275 12.8774 5.23874C13.0034 5.54474 13.0515 5.87723 13.0174 6.20639C12.9833 6.53555 12.8681 6.85111 12.682 7.12477C12.4959 7.39843 12.2449 7.62164 11.9513 7.7744C11.6578 7.92716 11.3309 8.0047 11 8.00005H2"
+                            stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M12.6 19.4C12.8317 19.6362 13.1184 19.8114 13.4344 19.9096C13.7504 20.0078 14.0858 20.0261 14.4106 19.9628C14.7355 19.8995 15.0395 19.7566 15.2955 19.5469C15.5515 19.3372 15.7514 19.0673 15.8774 18.7613C16.0034 18.4553 16.0515 18.1228 16.0174 17.7936C15.9833 17.4645 15.8681 17.1489 15.682 16.8752C15.4959 16.6016 15.2449 16.3784 14.9513 16.2256C14.6578 16.0728 14.3309 15.9953 14 16H2"
+                            stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Wind: 15 km/h
+                </div>
+                <div id="humudityTxt">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7 16.3C9.2 16.3 11 14.47 11 12.25C11 11.09 10.43 9.99005 9.29 9.06005C8.15 8.13005 7.29 6.75005 7 5.30005C6.71 6.75005 5.86 8.14005 4.71 9.06005C3.56 9.98005 3 11.1 3 12.25C3 14.47 4.8 16.3 7 16.3Z"
+                            stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M12.5601 6.60002C13.2478 5.50114 13.7354 4.28906 14.0001 3.02002C14.5001 5.52002 16.0001 7.92002 18.0001 9.52002C20.0001 11.12 21.0001 13.02 21.0001 15.02C21.0058 16.4023 20.601 17.7552 19.8369 18.9071C19.0728 20.059 17.9839 20.9582 16.7082 21.4905C15.4325 22.0229 14.0275 22.1644 12.6713 21.8973C11.315 21.6302 10.0686 20.9664 9.09009 19.99"
+                            stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Humidity: 60%
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+</html>

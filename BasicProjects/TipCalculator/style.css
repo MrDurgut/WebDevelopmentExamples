@@ -1,0 +1,47 @@
+body {
+    background-color: #7d7c7c !important;
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.mainContainer {
+    position: relative;
+    top: -20px;
+    background-color: white;
+    width: 750px;
+    height: 500px;
+    border: 1px white solid;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    padding-left: 20px;
+}
+
+.headerTitle {
+    color: white;
+    position: relative;
+    top: -30px;
+    padding-bottom: 10px;
+}
+
+.containerHeader {
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+p {
+    padding-top: 30px;
+}
+
+#calculateButton {
+    width: calc(100% - 20px);
+}
+
+#valuesTable {
+    width: calc(100% - 20px);
+}
